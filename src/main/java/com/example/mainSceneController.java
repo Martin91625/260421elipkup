@@ -46,7 +46,6 @@ public class mainSceneController {
         double r2 = Double.parseDouble(r2TextField.getText());
 
         double volume = EllipsoidCone.calcVolume(r1, r2, height);
-
         volumeField.setText(String.format("%.3f", volume));
 
         String data = height + ":" + r1 + ":" + r2 + ":" + volume + "\n";
