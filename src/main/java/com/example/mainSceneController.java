@@ -1,3 +1,14 @@
+/*
+* File: mainSceneController.java
+* Author: El Miri Martin
+* Copyright: 2026, El Miri Martin
+* Group: Szoft I/N
+* Date: 2026-04-21
+* Github: https://github.com/Martin91625/
+* Licenc: MIT
+*/
+
+
 package com.example;
 
 import javafx.event.ActionEvent;
@@ -19,6 +30,12 @@ public class mainSceneController {
     private TextField volumeField;
 
     @FXML
+    void onClickAboutButton(ActionEvent event) {
+        App.setRoot("aboutScene");
+    }
+
+
+    @FXML
     void onClickCalcButton(ActionEvent event) {
         startCalc();
     }
@@ -30,7 +47,7 @@ public class mainSceneController {
 
         Double volume = EllipsoidCone.calcVolume(r1, r2, height);
 
-        volumeField.setText(volume.toString());
+        volumeField.setText(String.format("%.3f", volume));
 
         String data = height + ":" + r1 + ":" + r2 + ":" + volume + "\n";
         Storage.writeToFile(data);
